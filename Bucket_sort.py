@@ -47,7 +47,6 @@ class Bucket_Sort:
             print("_________________________________________")
 
     def bucket_sort(self, input_list: list, parameter: int):
-
         i = 0
         max = input_list[i]
         while i < len(input_list):
@@ -57,28 +56,22 @@ class Bucket_Sort:
             i += 1
         size = max.get(parameter) / len(input_list)
 
-
         buckets_list = []
         for x in range(51528):
             buckets_list.append([])
 
-
         k = 0
         a = input_list[k]
-        #while k < len(input_list):
 
         for k in range(len(input_list)):
             a = input_list[k]
             j = int(a.get(parameter) / size)
             if j != len(input_list):
                 buckets_list[j].append(input_list[k])
-                #k += 1
             else:
                 buckets_list[len(input_list) - 1].append(input_list[k])
-                #k += 1
 
         for z in range(len(input_list)):
-
             insertion_sort(buckets_list[z], parameter)
 
         final_output = []
